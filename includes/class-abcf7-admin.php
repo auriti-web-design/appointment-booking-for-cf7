@@ -84,7 +84,7 @@ class ABCF7_Admin
                         <?php
                         $appointment_types = get_option('abcf7_appointment_types', array());
 
-                        // Ciclo per visualizzare i tipi di appuntamento esistenti.
+                        // Loop to display existing appointment types.
                         if (!empty($appointment_types)) {
                             foreach ($appointment_types as $key => $appointment_type) {
                                 ?>
@@ -148,13 +148,13 @@ class ABCF7_Admin
 
                 <script>
                     jQuery(document).ready(function ($) {
-                        // Funzione per aggiungere un nuovo tipo di appuntamento.
+                        // Function to add a new appointment type.
                         $(document).on('click', '.abcf7-add-appointment-type', function (e) {
                             e.preventDefault();
 
-                            var key = Date.now(); // Genera una chiave univoca.
+                            var key = Date.now(); // Generate a unique key.
 
-                            // Clona la riga del template e sostituisci i placeholder con la chiave.
+                            // Clone the template line and replace the placeholders with the key.
                             var newRow = $('.abcf7-add-appointment-type-row').prev().clone();
                             newRow.find('input, textarea').val('');
                             newRow.find('label, input, textarea').each(function () {
@@ -167,7 +167,7 @@ class ABCF7_Admin
                             newRow.insertBefore('.abcf7-add-appointment-type-row');
                         });
 
-                        // Funzione per rimuovere un tipo di appuntamento.
+                        // Function to remove an appointment type.
                         $(document).on('click', '.abcf7-remove-appointment-type', function (e) {
                             e.preventDefault();
                             var key = $(this).data('key');
@@ -182,4 +182,4 @@ class ABCF7_Admin
         </div>
         <?php
     }
-} // Chiusura della classe ABCF7_Admin
+}
