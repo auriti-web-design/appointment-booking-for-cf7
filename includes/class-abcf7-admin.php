@@ -17,16 +17,18 @@ class ABCF7_Admin
     }
 
     /**
-     * Adds admin menu.
+     * Adds the admin menu.
      */
     public function add_admin_menu()
     {
-        add_options_page(
-            __('Appointment Booking for CF7', 'appointment-booking-for-cf7'),
-            __('Appointment Booking', 'appointment-booking-for-cf7'),
-            'manage_options',
-            'abcf7-settings',
-            array($this, 'display_settings_page')
+        add_menu_page(
+            __('Appointment Booking for CF7', 'appointment-booking-for-cf7'), // Page title
+            __('Appointment Booking', 'appointment-booking-for-cf7'), // Menu title
+            'manage_options', // Capability
+            'abcf7-settings', // Menu slug
+            array($this, 'display_settings_page'), // Callback function
+            'dashicons-calendar-alt', // Icon URL (optional)
+            20 // Position (optional)
         );
     }
 
