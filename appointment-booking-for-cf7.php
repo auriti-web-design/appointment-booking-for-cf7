@@ -38,4 +38,18 @@ function abcf7_init()
 }
 add_action('plugins_loaded', 'abcf7_init');
 
+// Hook for adding new tags to the form.
+add_action('wpcf7_add_form_tag', 'abcf7_add_form_tags');
+function abcf7_add_form_tags()
+{
+    // TODO: Implement in Phase 3.
+}
+
+// Hook for adding new shortcodes.
+add_shortcode('abcf7_appointment', 'abcf7_appointment_shortcode');
+function abcf7_appointment_shortcode()
+{
+    // TODO: Implement in Phase 3.
+}
+
 ?>
